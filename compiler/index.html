@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compiler — Siab Syntax</title>
+<meta name="description" content="Run Cambridge IGCSE 2210 pseudocode in the browser — lexer, parser and interpreter by Siab Syntax.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/codemirror.min.css">
+<link rel="stylesheet" href="compiler.css">
+</head>
+<body>
+<header>
+<nav class="wrap">
+  <a href="../index.html" class="logo"><span>Siab</span>&nbsp;Syntax</a>
+  <div class="nav-links" id="navLinks">
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#notes">Notes</a>
+    <a href="index.html" class="active" id="compilerNav">Compiler</a>
+    <a href="../index.html#courses">Courses</a>
+    <a href="../index.html#youtube">YouTube</a>
+  </div>
+  <div class="nav-actions">
+    <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+    </button>
+    <a href="../index.html#courses" class="btn btn-primary">Enroll now</a>
+    <button type="button" class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+</header>
+
+<main class="workspace">
+  <div class="toolbar">
+    <label class="toolbar-label" for="exampleSelect">Example</label>
+    <select id="exampleSelect" aria-label="Load an example program"></select>
+    <button type="button" class="btn btn-primary" id="runBtn">Run</button>
+    <button type="button" class="btn btn-stop" id="stopBtn" disabled>Stop</button>
+    <button type="button" class="btn btn-ghost" id="clearBtn">Clear console</button>
+    <span class="toolbar-spacer"></span>
+    <span class="toolbar-hint">IGCSE 2210 pseudocode · runs in your browser</span>
+  </div>
+  <div class="split">
+    <section class="pane pane-editor" aria-label="Pseudocode editor">
+      <div class="pane-label">Editor</div>
+      <div id="editor">
+        <textarea id="codeInput" class="plain-textarea" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Pseudocode editor"></textarea>
+      </div>
+    </section>
+    <section class="pane pane-console" aria-label="Program output">
+      <div class="pane-label">Console</div>
+      <div id="console" class="console" role="log" aria-live="polite"></div>
+    </section>
+  </div>
+</main>
+
+<footer>
+<div class="wrap footer">
+  <p>© <span id="year"></span> Siab Syntax — Afra, Lahore</p>
+  <div class="footer-links">
+    <a target="_blank" rel="noopener" href="https://wa.me/923134548692">WhatsApp</a>
+    <a href="mailto:afrasiyabkhan2022@gmail.com">Email</a>
+    <a target="_blank" rel="noopener" href="https://youtube.com/@SiabSyntax">YouTube</a>
+  </div>
+</div>
+</footer>
+
+<script src="vendor/codemirror.min.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
